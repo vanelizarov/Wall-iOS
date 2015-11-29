@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="8_bit_operator_bold.ttf">
+            <string>8bitOperatorPlus8-Bold</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TableHeader" customModule="Wall" customModuleProvider="target">
+            <connections>
+                <outlet property="label" destination="QKt-7e-tmA" id="MFF-Ab-M70"/>
+                <outlet property="newPostButton" destination="IRH-JR-Kaj" id="rz0-QQ-Vdk"/>
+                <outlet property="newPostButtonHeight" destination="W5O-NF-AaF" id="pdM-sg-TSq"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1PF-WP-HAp">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="132"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WALL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="QKt-7e-tmA">
+                    <rect key="frame" x="8" y="38" width="304" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="moa-Ez-Bmp"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="8bitOperatorPlus8-Bold" family="8-bit Operator+ 8" pointSize="50"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRH-JR-Kaj" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="92" width="320" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="W5O-NF-AaF"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="New Post">
+                        <color key="titleColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.082352941176470587" green="0.090196078431372548" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="IRH-JR-Kaj" secondAttribute="trailing" id="1QC-wE-hye"/>
+                <constraint firstItem="IRH-JR-Kaj" firstAttribute="top" secondItem="QKt-7e-tmA" secondAttribute="bottom" id="jNk-5H-jhG"/>
+                <constraint firstAttribute="trailing" secondItem="QKt-7e-tmA" secondAttribute="trailing" constant="8" id="mzA-IC-jfS"/>
+                <constraint firstItem="IRH-JR-Kaj" firstAttribute="leading" secondItem="1PF-WP-HAp" secondAttribute="leading" id="nDZ-Fu-iOt"/>
+                <constraint firstItem="QKt-7e-tmA" firstAttribute="leading" secondItem="1PF-WP-HAp" secondAttribute="leading" constant="8" id="uYU-b7-3fL"/>
+                <constraint firstAttribute="bottom" secondItem="IRH-JR-Kaj" secondAttribute="bottom" id="vrH-0F-lW5"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="471" y="284"/>
+        </view>
+    </objects>
+</document>
