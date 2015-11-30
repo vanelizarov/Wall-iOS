@@ -22,6 +22,10 @@ class Post: NSObject {
         self.text = text
         self.date = date
         
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.S'Z'"
+        print(dateFormatter.dateFromString(self.date)!.description)
+        
     }
     
     init(post: Post) {

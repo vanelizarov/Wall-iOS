@@ -116,7 +116,7 @@ class ViewController: UITableViewController {
         upHeader.backgroundColor = UIColor(red: 21 / 255.0, green: 23 / 255.0, blue: 23 / 255.0, alpha: 1.0)
         self.view.addSubview(upHeader)
         
-        getPosts()
+        //getPosts()
     
     }
     
@@ -128,6 +128,8 @@ class ViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        getPosts()
         
         tableView.reloadData()
         tableView.delaysContentTouches = false

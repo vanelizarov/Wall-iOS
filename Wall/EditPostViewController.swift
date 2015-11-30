@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class EditPostViewController: UIViewController, UITextFieldDelegate {
 
@@ -31,11 +32,6 @@ class EditPostViewController: UIViewController, UITextFieldDelegate {
         textView.layer.borderWidth = 0.5
         textView.layer.cornerRadius = 5
         
-        
-        print(titleTextField.layer.borderColor)
-        print(titleTextField.layer.borderWidth)
-        print(titleTextField.layer.cornerRadius)
-
         titleTextField.text = post.title
         textView.text = post.text
         
@@ -57,7 +53,22 @@ class EditPostViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func updatePost(sender: AnyObject) {
         
+        let parameters = [
+            
+            "title" : titleTextField.text!,
+            "text" : textView.text!
+            
+        ]
         
+        let headers = [
+        
+            "Content-Type" : "application/json",
+        
+        ]
+        
+        Alamofire.request(.PATCH, "http://morning-everglades-5369.herokuapp.com/posts/\(self.post.id)", parameters: parameters, encoding: .JSON, headers: headers)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
     
