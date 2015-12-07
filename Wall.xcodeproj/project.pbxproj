@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4172CC611C1541F200E405AC /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172CC601C1541F200E405AC /* RefreshView.swift */; };
+		4172CC631C15420E00E405AC /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4172CC621C15420E00E405AC /* RefreshView.xib */; };
+		418BC60B1C11AB2400E696A8 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418BC60A1C11AB2400E696A8 /* NewPostViewController.swift */; };
 		41C0A08B1C0A5904008C8EC1 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C0A08A1C0A5904008C8EC1 /* ActionButton.swift */; };
 		41C0A08D1C0A5AB9008C8EC1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C0A08C1C0A5AB9008C8EC1 /* Extensions.swift */; };
 		41E1A4751C0A657E00A96988 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E1A4741C0A657E00A96988 /* Post.swift */; };
+		41F9B6511C139FF100EB0188 /* ResponsiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41F9B6501C139FF100EB0188 /* ResponsiveViewController.swift */; };
 		833B105F1C0539850029FF5B /* 8_bit_operator_bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 833B105E1C0539850029FF5B /* 8_bit_operator_bold.ttf */; };
 		833B10611C053ACF0029FF5B /* TableHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 833B10601C053ACF0029FF5B /* TableHeader.xib */; };
 		83E3B85A1C053F09000C2A92 /* TableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E3B8591C053F09000C2A92 /* TableHeader.swift */; };
@@ -45,9 +49,14 @@
 
 /* Begin PBXFileReference section */
 		0C41EFB983503C6E6FF3ECA9 /* Pods-Wall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wall/Pods-Wall.release.xcconfig"; sourceTree = "<group>"; };
+		4168D7451C11B3F100A55756 /* Wall-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wall-Bridging-Header.h"; sourceTree = "<group>"; };
+		4172CC601C1541F200E405AC /* RefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
+		4172CC621C15420E00E405AC /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
+		418BC60A1C11AB2400E696A8 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		41C0A08A1C0A5904008C8EC1 /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		41C0A08C1C0A5AB9008C8EC1 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		41E1A4741C0A657E00A96988 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		41F9B6501C139FF100EB0188 /* ResponsiveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponsiveViewController.swift; sourceTree = "<group>"; };
 		833B105E1C0539850029FF5B /* 8_bit_operator_bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8_bit_operator_bold.ttf; sourceTree = "<group>"; };
 		833B10601C053ACF0029FF5B /* TableHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeader.xib; sourceTree = "<group>"; };
 		83E3B8591C053F09000C2A92 /* TableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHeader.swift; sourceTree = "<group>"; };
@@ -97,6 +106,75 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4168D7491C11B45E00A55756 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				83E3B85B1C054359000C2A92 /* TableHeader */,
+				83FC588A1C0507E800BEAB1D /* Assets.xcassets */,
+				83FC58871C0507E800BEAB1D /* Main.storyboard */,
+				83FC588C1C0507E800BEAB1D /* LaunchScreen.storyboard */,
+				4172CC641C15422A00E405AC /* RefreshView */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		4168D74A1C11B5B300A55756 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				83FC588F1C0507E800BEAB1D /* Info.plist */,
+				833B105E1C0539850029FF5B /* 8_bit_operator_bold.ttf */,
+				4168D7451C11B3F100A55756 /* Wall-Bridging-Header.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4168D74B1C11B5D700A55756 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				41C0A08A1C0A5904008C8EC1 /* ActionButton.swift */,
+				83E3B85E1C054B1F000C2A92 /* PostCell.swift */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		4168D74C1C11B5F100A55756 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				83FC58831C0507E800BEAB1D /* AppDelegate.swift */,
+				41C0A08C1C0A5AB9008C8EC1 /* Extensions.swift */,
+				41F9B6501C139FF100EB0188 /* ResponsiveViewController.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		4168D74D1C11B5F600A55756 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				41E1A4741C0A657E00A96988 /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		4168D74E1C11B5FF00A55756 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				83FC58851C0507E800BEAB1D /* ViewController.swift */,
+				418BC60A1C11AB2400E696A8 /* NewPostViewController.swift */,
+				83E3B8621C068393000C2A92 /* ShowPostViewController.swift */,
+				83E3B8601C068383000C2A92 /* EditPostViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4172CC641C15422A00E405AC /* RefreshView */ = {
+			isa = PBXGroup;
+			children = (
+				4172CC621C15420E00E405AC /* RefreshView.xib */,
+				4172CC601C1541F200E405AC /* RefreshView.swift */,
+			);
+			name = RefreshView;
+			sourceTree = "<group>";
+		};
 		4A42153244AAF00FA61F82E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,20 +226,12 @@
 		83FC58821C0507E800BEAB1D /* Wall */ = {
 			isa = PBXGroup;
 			children = (
-				83FC58831C0507E800BEAB1D /* AppDelegate.swift */,
-				41C0A08C1C0A5AB9008C8EC1 /* Extensions.swift */,
-				41E1A4741C0A657E00A96988 /* Post.swift */,
-				83FC58851C0507E800BEAB1D /* ViewController.swift */,
-				83E3B8621C068393000C2A92 /* ShowPostViewController.swift */,
-				83E3B8601C068383000C2A92 /* EditPostViewController.swift */,
-				83FC58871C0507E800BEAB1D /* Main.storyboard */,
-				83E3B85E1C054B1F000C2A92 /* PostCell.swift */,
-				41C0A08A1C0A5904008C8EC1 /* ActionButton.swift */,
-				83E3B85B1C054359000C2A92 /* TableHeader */,
-				83FC588A1C0507E800BEAB1D /* Assets.xcassets */,
-				83FC588C1C0507E800BEAB1D /* LaunchScreen.storyboard */,
-				83FC588F1C0507E800BEAB1D /* Info.plist */,
-				833B105E1C0539850029FF5B /* 8_bit_operator_bold.ttf */,
+				4168D74C1C11B5F100A55756 /* Core */,
+				4168D74D1C11B5F600A55756 /* Models */,
+				4168D74E1C11B5FF00A55756 /* View Controllers */,
+				4168D74B1C11B5D700A55756 /* Subclasses */,
+				4168D7491C11B45E00A55756 /* Interface */,
+				4168D74A1C11B5B300A55756 /* Supporting Files */,
 			);
 			path = Wall;
 			sourceTree = "<group>";
@@ -292,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4172CC631C15420E00E405AC /* RefreshView.xib in Resources */,
 				833B105F1C0539850029FF5B /* 8_bit_operator_bold.ttf in Resources */,
 				83FC588E1C0507E800BEAB1D /* LaunchScreen.storyboard in Resources */,
 				83FC588B1C0507E800BEAB1D /* Assets.xcassets in Resources */,
@@ -375,9 +446,12 @@
 				41C0A08D1C0A5AB9008C8EC1 /* Extensions.swift in Sources */,
 				83E3B8631C068393000C2A92 /* ShowPostViewController.swift in Sources */,
 				83E3B8611C068383000C2A92 /* EditPostViewController.swift in Sources */,
+				4172CC611C1541F200E405AC /* RefreshView.swift in Sources */,
+				41F9B6511C139FF100EB0188 /* ResponsiveViewController.swift in Sources */,
 				41E1A4751C0A657E00A96988 /* Post.swift in Sources */,
 				83E3B85F1C054B1F000C2A92 /* PostCell.swift in Sources */,
 				41C0A08B1C0A5904008C8EC1 /* ActionButton.swift in Sources */,
+				418BC60B1C11AB2400E696A8 /* NewPostViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,12 +592,15 @@
 			baseConfigurationReference = 8EEE8B9489D40F91E74836BC /* Pods-Wall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Wall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanelizarov.Wall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wall/Wall-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -532,12 +609,14 @@
 			baseConfigurationReference = 0C41EFB983503C6E6FF3ECA9 /* Pods-Wall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Wall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vanelizarov.Wall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wall/Wall-Bridging-Header.h";
 			};
 			name = Release;
 		};

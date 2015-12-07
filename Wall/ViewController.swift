@@ -9,13 +9,14 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MBProgressHUD
 
 class ViewController: UITableViewController {
     
     var posts = [Post]()
     var postToShow : Post!
     
-    var upHeader : UIView!
+    var upHeader : RefreshView!
 
     func createPost(title: String, text: String) {
         
@@ -36,7 +37,19 @@ class ViewController: UITableViewController {
     
     func deletePost(sender: ActionButton) {
         
-        //print("delete \(id)")
+        (sender.superview?.superview as! PostCell).post._print()
+        
+        let deleteAlertController = UIAlertController(title: "Are you sure?", message: "This cannot be undone", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        deleteAlertController.addAction(UIAlertAction(title: "Delete", style: UIAlertActionStyle.Destructive, handler: { (action) -> Void in
+            
+            Alamofire.request(.DELETE, "http://morning-everglades-5369.herokuapp.com/posts/\((sender.superview?.superview as! PostCell).post.id)", parameters: nil, encoding: .JSON, headers: nil)
+            
+            self.updateData()
+            
+        }))
+        deleteAlertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+        
+        self.presentViewController(deleteAlertController, animated: true, completion: nil)
         
     }
     
@@ -53,11 +66,21 @@ class ViewController: UITableViewController {
     
     func addNewPost() {
     
-        print("new")
+        let newPostViewController = self.storyboard?.instantiateViewControllerWithIdentifier("newPostViewController") as! NewPostViewController
+        
+        self.presentViewController(newPostViewController, animated: true, completion: nil)
     
     }
     
     func getPosts() {
+        
+        posts.removeAll()
+        
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.labelText = "Loading"
+        hud.labelFont = UIFont(name: "8-bit Operator+ 8", size: 15)
+        hud.cornerRadius = 0
+        hud.dimBackground = true
         
         Alamofire.request(.GET, "http://morning-everglades-5369.herokuapp.com/posts.json", parameters: nil, encoding: .JSON, headers: nil).responseJSON { (response) -> Void in
             
@@ -90,12 +113,20 @@ class ViewController: UITableViewController {
                 
             
                 self.tableView.reloadData()
+                hud.hide(true)
                 
                 break
                 
             case .Failure(let error):
                 
                 print(error.localizedDescription)
+                
+                let errorAlertController = UIAlertController(title: "Something goes wrong", message: "Error getting posts", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel, handler: nil))
+                
+                self.presentViewController(errorAlertController, animated: true, completion: nil)
+                
+                hud.hide(true)
                 
                 break
                 
@@ -112,26 +143,44 @@ class ViewController: UITableViewController {
         header.newPostButton.addTarget(self, action: "addNewPost", forControlEvents: UIControlEvents.TouchUpInside)
         tableView.tableHeaderView = header
         
-        upHeader = UIView(frame: CGRectMake(0, 0, self.view.frame.size.width, 0))
-        upHeader.backgroundColor = UIColor(red: 21 / 255.0, green: 23 / 255.0, blue: 23 / 255.0, alpha: 1.0)
+        //print(header.label.font)
+        
+        upHeader = RefreshView(frame: CGRectMake(0, 0, self.view.frame.size.width, 0))
+        upHeader.scale = 0.0
+        
         self.view.addSubview(upHeader)
         
-        //getPosts()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateData", name: "postsEdited", object: nil)
+        
+        updateData()
     
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         
         upHeader.frame = CGRectMake(0, 0, self.view.frame.size.width, tableView.contentOffset.y)
-        upHeader.backgroundColor = UIColor(red: 21 / 255, green: 23 / 255, blue: 23 / 255, alpha: 1.0)
+        upHeader.scale = (-tableView.contentOffset.y / 100)
+        ///print(upHeader.label.font.pointSize)
+        
+    }
+    
+    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
+        
+        getPosts()
+        
+    }
+    
+    func updateData() {
+        
+        getPosts()
+        tableView.reloadData()
         
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        getPosts()
+        //updateData()
         
-        tableView.reloadData()
         tableView.delaysContentTouches = false
         
     }
@@ -154,8 +203,14 @@ class ViewController: UITableViewController {
         
         cell.post = posts.reverse()[indexPath.row]
         cell.titleLabel.text = posts.reverse()[indexPath.row].title
-        cell.textView.text = posts.reverse()[indexPath.row].text
-        cell.dateLabel.text = posts.reverse()[indexPath.row].date
+        cell.textView.text = posts.reverse()[indexPath.row].text.truncate(200, trailing: "...")
+        
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        let date = formatter.dateFromString(posts.reverse()[indexPath.row].date)
+        formatter.dateFormat = "dd MMM yyyy HH:mm"
+        
+        cell.dateLabel.text = formatter.stringFromDate(date!)
         
         cell.showButton.addTarget(self, action: "showPost:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.editButton.addTarget(self, action: "editPost:", forControlEvents: UIControlEvents.TouchUpInside)

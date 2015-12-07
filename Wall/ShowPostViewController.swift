@@ -35,6 +35,16 @@ class ShowPostViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func editPost(sender: AnyObject) {
+        
+        let editPostViewController = self.storyboard?.instantiateViewControllerWithIdentifier("editPostViewController") as! EditPostViewController
+        editPostViewController.post = self.post
+        
+        self.presentViewController(editPostViewController, animated: true, completion: nil)
+
+        
+    }
+    
     @IBAction func goBack(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true, completion: nil)

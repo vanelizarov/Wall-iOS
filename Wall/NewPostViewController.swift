@@ -1,33 +1,31 @@
 //
-//  EditPostViewController.swift
+//  NewPostViewController.swift
 //  Wall
 //
-//  Created by vanelizarov on 26/11/15.
+//  Created by vanya elizarov on 04/12/15.
 //  Copyright © 2015 vanelizarov. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class EditPostViewController: ResponsiveViewController, UITextFieldDelegate, UITextViewDelegate {
-
+class NewPostViewController: ResponsiveViewController, UITextFieldDelegate, UITextViewDelegate {
+    
     @IBOutlet var titleTextField: UITextField!
     @IBOutlet var textView: UITextView!
     @IBOutlet var textViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet var updateButton: ActionButton!
+    @IBOutlet var createButton: ActionButton!
     @IBOutlet var titlePrompt: UILabel!
     @IBOutlet var textPrompt: UILabel!
-    
-    var post = Post(id: 0, title: "Not Available", text: "Not Available", date: "N/A")
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         self.activeTextView = textView
         self.constraintToChange = textViewBottomConstraint
         
         titleTextField.delegate = self
-        
+        textView.delegate = self
         
         let cancelButton = UIBarButtonItem(title: "Hide Keyboard", style: .Plain, target: self, action: "doneEditing")
         let toolBar = UIToolbar(frame: CGRectMake(0, 0, self.view.bounds.size.width, 50))
@@ -39,9 +37,15 @@ class EditPostViewController: ResponsiveViewController, UITextFieldDelegate, UIT
         textView.layer.borderWidth = 0.5
         textView.layer.cornerRadius = 5
         
-        titleTextField.text = post.title
-        textView.text = post.text
-        
+    }
+    
+    func doneEditing() {
+        self.view.endEditing(true)
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,16 +53,7 @@ class EditPostViewController: ResponsiveViewController, UITextFieldDelegate, UIT
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
-    func doneEditing() {
-        self.view.endEditing(true)
-    }
-    
-    @IBAction func updatePost(sender: AnyObject) {
+    @IBAction func createPost(sender: AnyObject) {
         
         if titleTextField.text?.characters.count < 4 {
             
@@ -71,7 +66,7 @@ class EditPostViewController: ResponsiveViewController, UITextFieldDelegate, UIT
             textPrompt.textColor = UIColor(red: 231.0/255.0, green: 76.0/255.0, blue: 60.0/255.0, alpha: 1.0)
             
         } else {
-        
+            
             let parameters = [
                 
                 "title" : titleTextField.text!,
@@ -81,26 +76,25 @@ class EditPostViewController: ResponsiveViewController, UITextFieldDelegate, UIT
             
             let headers = [
                 
-                "Content-Type" : "application/json",
+                "Content-Type" : "application/json"
                 
             ]
             
-            Alamofire.request(.PATCH, "http://morning-everglades-5369.herokuapp.com/posts/\(self.post.id)", parameters: parameters, encoding: .JSON, headers: headers)
+            Alamofire.request(.POST, "http://morning-everglades-5369.herokuapp.com/posts", parameters: parameters, encoding: .JSON, headers: headers)
+            
             
             NSNotificationCenter.defaultCenter().postNotificationName("postsUpdated", object: nil)
-            
             self.dismissViewControllerAnimated(true, completion: nil)
             
         }
         
     }
-    
+
     @IBAction func goBack(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
-
     /*
     // MARK: - Navigation
 

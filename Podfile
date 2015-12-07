@@ -8,6 +8,7 @@ target 'Wall' do
 
     pod 'Alamofire', '~> 3.0'
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
+    pod 'MBProgressHUD', '~> 0.9.1'
 
 end
 
