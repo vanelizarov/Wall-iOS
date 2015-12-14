@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4172CC611C1541F200E405AC /* RefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4172CC601C1541F200E405AC /* RefreshView.swift */; };
 		4172CC631C15420E00E405AC /* RefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4172CC621C15420E00E405AC /* RefreshView.xib */; };
 		418BC60B1C11AB2400E696A8 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 418BC60A1C11AB2400E696A8 /* NewPostViewController.swift */; };
 		41C0A08B1C0A5904008C8EC1 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C0A08A1C0A5904008C8EC1 /* ActionButton.swift */; };
@@ -50,7 +49,6 @@
 /* Begin PBXFileReference section */
 		0C41EFB983503C6E6FF3ECA9 /* Pods-Wall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wall.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wall/Pods-Wall.release.xcconfig"; sourceTree = "<group>"; };
 		4168D7451C11B3F100A55756 /* Wall-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wall-Bridging-Header.h"; sourceTree = "<group>"; };
-		4172CC601C1541F200E405AC /* RefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshView.swift; sourceTree = "<group>"; };
 		4172CC621C15420E00E405AC /* RefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RefreshView.xib; sourceTree = "<group>"; };
 		418BC60A1C11AB2400E696A8 /* NewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		41C0A08A1C0A5904008C8EC1 /* ActionButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
@@ -170,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				4172CC621C15420E00E405AC /* RefreshView.xib */,
-				4172CC601C1541F200E405AC /* RefreshView.swift */,
 			);
 			name = RefreshView;
 			sourceTree = "<group>";
@@ -446,7 +443,6 @@
 				41C0A08D1C0A5AB9008C8EC1 /* Extensions.swift in Sources */,
 				83E3B8631C068393000C2A92 /* ShowPostViewController.swift in Sources */,
 				83E3B8611C068383000C2A92 /* EditPostViewController.swift in Sources */,
-				4172CC611C1541F200E405AC /* RefreshView.swift in Sources */,
 				41F9B6511C139FF100EB0188 /* ResponsiveViewController.swift in Sources */,
 				41E1A4751C0A657E00A96988 /* Post.swift in Sources */,
 				83E3B85F1C054B1F000C2A92 /* PostCell.swift in Sources */,

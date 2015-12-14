@@ -16,13 +16,7 @@ class ViewController: UITableViewController {
     var posts = [Post]()
     var postToShow : Post!
     
-    var upHeader : RefreshView!
-
-    func createPost(title: String, text: String) {
-        
-        print("create \(title), \(text)")
-        
-    }
+    var refreshView : UIView!
     
     func editPost(sender: ActionButton) {
         
@@ -115,6 +109,8 @@ class ViewController: UITableViewController {
                 self.tableView.reloadData()
                 hud.hide(true)
                 
+                self.refreshControl!.endRefreshing()
+                
                 break
                 
             case .Failure(let error):
@@ -127,6 +123,7 @@ class ViewController: UITableViewController {
                 self.presentViewController(errorAlertController, animated: true, completion: nil)
                 
                 hud.hide(true)
+                self.refreshControl!.endRefreshing()
                 
                 break
                 
@@ -138,35 +135,37 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
         let header = TableHeader(frame: CGRectMake(0, 0, tableView.frame.size.width, 122))
         header.newPostButton.addTarget(self, action: "addNewPost", forControlEvents: UIControlEvents.TouchUpInside)
         tableView.tableHeaderView = header
         
-        //print(header.label.font)
+        refreshControl = UIRefreshControl()
+        refreshControl?.tintColor = .clearColor()
+        refreshControl?.backgroundColor = UIColor(red: 231/255.0, green: 76/255.0, blue: 60/255.0, alpha: 1.0)
+        tableView.addSubview(refreshControl!)
         
-        upHeader = RefreshView(frame: CGRectMake(0, 0, self.view.frame.size.width, 0))
-        upHeader.scale = 0.0
+        loadRefreshControlView()
         
-        self.view.addSubview(upHeader)
+        refreshControl!.addTarget(self, action: "updateData", forControlEvents: UIControlEvents.ValueChanged)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateData", name: "postsEdited", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateData", name: "postsUpdated", object: nil)
         
         updateData()
     
     }
     
-    override func scrollViewDidScroll(scrollView: UIScrollView) {
+    func loadRefreshControlView() {
         
-        upHeader.frame = CGRectMake(0, 0, self.view.frame.size.width, tableView.contentOffset.y)
-        upHeader.scale = (-tableView.contentOffset.y / 100)
-        ///print(upHeader.label.font.pointSize)
+        let refreshContents = NSBundle.mainBundle().loadNibNamed("RefreshView", owner: self, options: nil)
+
+        refreshView = refreshContents[0] as! UIView
+        refreshView.frame = refreshControl!.bounds
         
-    }
-    
-    override func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        
-        getPosts()
+        refreshControl?.addSubview(refreshView)
         
     }
     
@@ -178,8 +177,6 @@ class ViewController: UITableViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
-        //updateData()
         
         tableView.delaysContentTouches = false
         

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3YD-Nl-J4i">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3YD-Nl-J4i">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="bIL-iI-lUN">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ktm-8z-UoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="3YD-Nl-J4i" customClass="ViewController" customModule="Wall" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" delaysContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="138" sectionHeaderHeight="28" sectionFooterHeight="28" id="Qbc-Mg-TQl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="138" id="daU-o2-qFq" customClass="PostCell" customModule="Wall" customModuleProvider="target">
@@ -22,9 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="138"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lapel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX3-wi-3nC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lX3-wi-3nC">
                                             <rect key="frame" x="5" y="25" width="310" height="27"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="27" id="Qq3-Lk-SAi"/>
                                             </constraints>
@@ -34,7 +33,6 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6p-e6-fnp">
                                             <rect key="frame" x="5" y="82" width="310" height="12"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="12" id="FS8-SL-EHZ"/>
                                             </constraints>
@@ -44,14 +42,12 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CBk-wg-3zO">
                                             <rect key="frame" x="5" y="57" width="310" height="20"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" red="0.74117647060000003" green="0.76470588240000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9D-sx-wUH">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="LW7-hd-VgO"/>
@@ -59,7 +55,6 @@
                                         </view>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Scw-sO-unF" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="99" width="107" height="40"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="ctN-vP-dIZ"/>
                                             </constraints>
@@ -73,7 +68,6 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1p-YS-jDC" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                             <rect key="frame" x="107" y="99" width="106" height="40"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="zLt-eP-bx6"/>
                                             </constraints>
@@ -84,7 +78,6 @@
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpr-eQ-0IQ" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                             <rect key="frame" x="213" y="99" width="107" height="40"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="HLW-Tc-5a8"/>
                                             </constraints>
@@ -97,7 +90,6 @@
                                             </state>
                                         </button>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstItem="M6p-e6-fnp" firstAttribute="leading" secondItem="cqg-pJ-Ncy" secondAttribute="leading" constant="5" id="0Ga-9H-nrS"/>
                                         <constraint firstAttribute="trailing" secondItem="lX3-wi-3nC" secondAttribute="trailing" constant="5" id="796-GC-EwK"/>
@@ -125,7 +117,6 @@
                                         <constraint firstItem="lX3-wi-3nC" firstAttribute="leading" secondItem="cqg-pJ-Ncy" secondAttribute="leading" constant="5" id="z9a-5x-x8p"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <color key="backgroundColor" red="0.08235294118" green="0.090196078430000007" blue="0.090196078430000007" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="M6p-e6-fnp" id="0H6-6e-XBV"/>
@@ -142,8 +133,10 @@
                             <outlet property="delegate" destination="3YD-Nl-J4i" id="iXI-W9-Tuk"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="Qbc-Mg-TQl" id="hbB-Ld-CeA"/>
+                    </connections>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ktm-8z-UoM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="880" y="471"/>
         </scene>
@@ -161,7 +154,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPv-0J-iww" customClass="TableHeader" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="XYF-3I-XTl"/>
@@ -175,7 +167,6 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nxR-Jo-Tmp">
                                 <rect key="frame" x="5" y="90" width="310" height="24"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="hA6-vQ-LOR"/>
                                 </constraints>
@@ -185,13 +176,11 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z3c-im-9yG">
                                 <rect key="frame" x="5" y="119" width="310" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fzu-O0-m9W">
                                 <rect key="frame" x="5" y="157" width="310" height="24"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="8Y5-pF-bOT"/>
                                 </constraints>
@@ -201,7 +190,6 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5bw-Yk-p3m">
                                 <rect key="frame" x="5" y="189" width="310" height="331"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
@@ -209,7 +197,6 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VS8-rl-B4T" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="528" width="160" height="40"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="pSz-F9-2Td"/>
                                 </constraints>
@@ -223,7 +210,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slh-Ct-OUC" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="160" y="528" width="160" height="40"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="DqH-io-hGG"/>
                                 </constraints>
@@ -236,7 +222,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cPv-0J-iww" firstAttribute="leading" secondItem="eqI-5e-tFU" secondAttribute="leading" id="8vU-wg-5Mo"/>
@@ -296,7 +281,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBw-3F-lh2" customClass="TableHeader" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="f2u-fK-OHB"/>
@@ -310,7 +294,6 @@
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Adl-dN-xC6">
                                 <rect key="frame" x="5" y="90" width="310" height="24"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="nbz-Sr-uF3"/>
                                 </constraints>
@@ -320,7 +303,6 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3XA-SO-IZ9">
                                 <rect key="frame" x="5" y="119" width="310" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ZKm-1c-b7p"/>
                                 </constraints>
@@ -329,7 +311,6 @@
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pqP-6n-yte">
                                 <rect key="frame" x="5" y="157" width="310" height="24"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="H4b-a3-4Wh"/>
                                 </constraints>
@@ -339,14 +320,12 @@
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="tf3-TL-6vC">
                                 <rect key="frame" x="5" y="189" width="310" height="331"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9J-OR-PhU" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="528" width="160" height="40"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rQq-sY-XNq"/>
                                 </constraints>
@@ -360,7 +339,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3kW-42-hyH" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="160" y="528" width="160" height="40"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="lR2-XS-ejz"/>
                                 </constraints>
@@ -373,7 +351,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Adl-dN-xC6" firstAttribute="leading" secondItem="Zaf-g1-e16" secondAttribute="leading" constant="5" id="2QJ-02-qXy"/>
@@ -429,7 +406,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FHA-ic-ATd" customClass="TableHeader" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="82" id="paJ-GN-1yi"/>
@@ -443,7 +419,6 @@
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="g52-La-JSI">
                                 <rect key="frame" x="0.0" y="82" width="320" height="446"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
@@ -452,7 +427,6 @@
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5EY-UB-ss0" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="528" width="160" height="40"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="57t-vd-eJ3"/>
                                 </constraints>
@@ -466,7 +440,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xug-ie-rdf" customClass="ActionButton" customModule="Wall" customModuleProvider="target">
                                 <rect key="frame" x="160" y="528" width="160" height="40"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gX3-60-JBX"/>
                                 </constraints>
@@ -479,7 +452,6 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="g52-La-JSI" firstAttribute="top" secondItem="FHA-ic-ATd" secondAttribute="bottom" id="8BU-Lk-V7h"/>
